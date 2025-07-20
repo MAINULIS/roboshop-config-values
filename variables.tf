@@ -5,6 +5,9 @@ variable "secret-mounts" {
     roboshop-dev = {
       description = "RoboShop Project Dev Secrets"
     }
+    roboshop-infra = {
+      description = "RoboShop Project infra Secrets"
+    }
   }
 }
 
@@ -75,13 +78,21 @@ variable "secrets" {
     payment = {
       secret_mount = "roboshop-dev"
       kv = {
-        CART_HOST              = "cart-dev.maidevops.fun:8080",
+        CART_HOST              = "cart-dev.maidevops.fun",
         CART_PORT              = "8080",
-        USER_HOST              = "user-dev.maidevops.fun:8080",
+        USER_HOST              = "user-dev.maidevops.fun",
         USER_PORT              = "8080",
         AMQP_HOST              = "rabbitmq-dev.maidevops.fun",
         AMQP_USER              = "roboshop",
         AMQP_PASS              = "roboshop123"
+      }
+    }
+
+    ssh = {
+      secret_mount = "roboshop-infra"
+      kv = {
+        username               = "ec2-user",
+        password               = "DevOps321"
       }
     }
 
