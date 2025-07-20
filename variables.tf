@@ -42,7 +42,7 @@ variable "secrets" {
       secret_mount = "roboshop-dev"
       kv = {
         MONGO               = "true",
-        REDIS_URL           = "redis://redis-dev.maidevops.fun:6379"
+        REDIS_URL           = "redis://redis-dev.maidevops.fun:6379",
         MONGO_URL           = "mongodb://mongodb-dev.maidevops.fun:27017/users"
       }
     }
@@ -50,7 +50,7 @@ variable "secrets" {
     mysql = {
       secret_mount = "roboshop-dev"
       kv = {
-        ROOT_PASSWORD        = "Roboshop@1",
+        ROOT_PASSWORD        = "Roboshop@1"
       }
     }
 
@@ -58,7 +58,15 @@ variable "secrets" {
       secret_mount = "roboshop-dev"
       kv = {
         APP_USER              = "roboshop",
-        APP_PASSWORD          = "roboshop123",
+        APP_PASSWORD          = "roboshop123"
+      }
+    }
+
+    shipping = {
+      secret_mount = "roboshop-dev"
+      kv = {
+        CART_ENDPOINT           = "cart-dev.maidevops.fun:8080",
+        DB_HOST                 = "mysql-dev.maidevops.fun"
       }
     }
 
