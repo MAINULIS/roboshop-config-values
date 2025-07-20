@@ -26,10 +26,17 @@ variable "secrets" {
         USER_URL           = "http://user-dev.maidevops.fun:8200/",
         CART_URL           = "http://cart-dev.maidevops.fun:8200/",
         SHIPPING_URL           = "http://shipping-dev.maidevops.fun:8200/",
-        PAYMENT_URL           = "http://payment-dev.maidevops.fun:8200/",
-        CATALOGUE_HOST       = "catalogue-dev.maidevops.fun",
-        CATALOGUE_PORT       = 8080
+        PAYMENT_URL           = "http://payment-dev.maidevops.fun:8200/"
       }
     }
+
+    catalogue = {
+      secret_mount = "roboshop-dev"
+      kv = {
+        MONGO               = "true",
+        MONGO_URL           = "mongodb://mongodb-dev.maidevops.fun:27017/catalogue"
+      }
+    }
+
   }
 }
