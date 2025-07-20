@@ -22,11 +22,11 @@ variable "secrets" {
     frontend = {
       secret_mount = "roboshop-dev"
       kv = {
-        CATALOGUE_URL           = "http://catalogue-dev.maidevops.fun:8200/",
+        CATALOGUE_URL      = "http://catalogue-dev.maidevops.fun:8200/",
         USER_URL           = "http://user-dev.maidevops.fun:8200/",
         CART_URL           = "http://cart-dev.maidevops.fun:8200/",
-        SHIPPING_URL           = "http://shipping-dev.maidevops.fun:8200/",
-        PAYMENT_URL           = "http://payment-dev.maidevops.fun:8200/"
+        SHIPPING_URL       = "http://shipping-dev.maidevops.fun:8200/",
+        PAYMENT_URL        = "http://payment-dev.maidevops.fun:8200/"
       }
     }
 
@@ -44,6 +44,21 @@ variable "secrets" {
         MONGO               = "true",
         REDIS_URL           = "redis://redis-dev.maidevops.fun:6379"
         MONGO_URL           = "mongodb://mongodb-dev.maidevops.fun:27017/users"
+      }
+    }
+
+    mysql = {
+      secret_mount = "roboshop-dev"
+      kv = {
+        ROOT_PASSWORD        = "Roboshop@1",
+      }
+    }
+
+    rabbitmq = {
+      secret_mount = "roboshop-dev"
+      kv = {
+        APP_USER              = "roboshop",
+        APP_PASSWORD          = "roboshop123",
       }
     }
 
