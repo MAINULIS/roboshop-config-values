@@ -29,7 +29,17 @@ variable "secrets" {
         USER_URL            = "http://user-dev.maidevops.fun:8200/",
         CART_URL            = "http://cart-dev.maidevops.fun:8200/",
         SHIPPING_URL        = "http://shipping-dev.maidevops.fun:8200/",
-        PAYMENT_URL         = "http://payment-dev.maidevops.fun:8200/"
+        PAYMENT_URL         = "http://payment-dev.maidevops.fun:8200/",
+        CATALOGUE_HOST      = "catalogue-dev.maidevops.fun"
+        CATALOGUE_PORT      = "8080"
+        USER_HOST           = "user-dev.maidevops.fun"
+        USER_PORT           = "8080"
+        CART_HOST           = "cart-dev.maidevops.fun"
+        CART_PORT           = "8080"
+        SHIPPING_HOST       = "shipping-dev.maidevops.fun"
+        SHIPPING_PORT       = "8080"
+        PAYMENT_HOST        = "payment-dev.maidevops.fun"
+        PAYMENT_PORT        = "8080"
       }
     }
 
