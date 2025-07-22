@@ -16,8 +16,8 @@ variable "secrets" {
     cart = {
       secret_mount = "roboshop-dev"
       kv = {
-        REDIS_HOST          = "redis-dev.maidevops.fun",
-        CATALOGUE_HOST      = "catalogue-dev.maidevops.fun",
+        REDIS_HOST          = "redis-dev.maidevops.fun"
+        CATALOGUE_HOST      = "catalogue-dev.maidevops.fun"
         CATALOGUE_PORT      = 8080
       }
     }
@@ -25,11 +25,11 @@ variable "secrets" {
     frontend = {
       secret_mount = "roboshop-dev"
       kv = {
-        CATALOGUE_URL       = "http://catalogue-dev.maidevops.fun:8200/",
-        USER_URL            = "http://user-dev.maidevops.fun:8200/",
-        CART_URL            = "http://cart-dev.maidevops.fun:8200/",
-        SHIPPING_URL        = "http://shipping-dev.maidevops.fun:8200/",
-        PAYMENT_URL         = "http://payment-dev.maidevops.fun:8200/",
+        CATALOGUE_URL       = "http://catalogue-dev.maidevops.fun:8200/"
+        USER_URL            = "http://user-dev.maidevops.fun:8200/"
+        CART_URL            = "http://cart-dev.maidevops.fun:8200/"
+        SHIPPING_URL        = "http://shipping-dev.maidevops.fun:8200/"
+        PAYMENT_URL         = "http://payment-dev.maidevops.fun:8200/"
         CATALOGUE_HOST      = "catalogue-dev.maidevops.fun"
         CATALOGUE_PORT      = "8080"
         USER_HOST           = "user-dev.maidevops.fun"
@@ -46,16 +46,20 @@ variable "secrets" {
     catalogue = {
       secret_mount = "roboshop-dev"
       kv = {
-        MONGO               = "true",
+        MONGO               = "true"
         MONGO_URL           = "mongodb://mongodb-dev.maidevops.fun:27017/catalogue"
+        DB_TYPE             = "mongo"
+        APP_GIT_URL         = "https://github.com/roboshop-devops-project-v3/catalogue"
+        DB_HOST             = "mongodb-dev.maidevops.fun"
+        SCHEMA_FILE         = "db/master-data.js"
       }
     }
 
     user = {
       secret_mount = "roboshop-dev"
       kv = {
-        MONGO               = "true",
-        REDIS_URL           = "redis://redis-dev.maidevops.fun:6379",
+        MONGO               = "true"
+        REDIS_URL           = "redis://redis-dev.maidevops.fun:6379"
         MONGO_URL           = "mongodb://mongodb-dev.maidevops.fun:27017/users"
       }
     }
@@ -78,9 +82,9 @@ variable "secrets" {
     shipping = {
       secret_mount = "roboshop-dev"
       kv = {
-        CART_ENDPOINT         = "cart-dev.maidevops.fun:8080",
-        DB_HOST               = "mysql-dev.maidevops.fun",
-        DB_USER               = "root",
+        CART_ENDPOINT         = "cart-dev.maidevops.fun:8080"
+        DB_HOST               = "mysql-dev.maidevops.fun"
+        DB_USER               = "root"
         DB_PASS               = "Roboshop@1"
       }
     }
@@ -88,12 +92,12 @@ variable "secrets" {
     payment = {
       secret_mount = "roboshop-dev"
       kv = {
-        CART_HOST              = "cart-dev.maidevops.fun",
-        CART_PORT              = "8080",
-        USER_HOST              = "user-dev.maidevops.fun",
-        USER_PORT              = "8080",
-        AMQP_HOST              = "rabbitmq-dev.maidevops.fun",
-        AMQP_USER              = "roboshop",
+        CART_HOST              = "cart-dev.maidevops.fun"
+        CART_PORT              = "8080"
+        USER_HOST              = "user-dev.maidevops.fun"
+        USER_PORT              = "8080"
+        AMQP_HOST              = "rabbitmq-dev.maidevops.fun"
+        AMQP_USER              = "roboshop"
         AMQP_PASS              = "roboshop123"
       }
     }
@@ -101,7 +105,7 @@ variable "secrets" {
     ssh = {
       secret_mount = "roboshop-infra"
       kv = {
-        username               = "ec2-user",
+        username               = "ec2-user"
         password               = "DevOps321"
       }
     }
