@@ -112,5 +112,12 @@ variable "secrets" {
       }
     }
 
+    github-runner = {
+      secret_mount = "roboshop-infra"
+      kv = {
+        RUNNER_TOKEN = "xxx" # replace this value in UI. As runner token is a real secret we can not hardcode in public place
+      }
+    }
+
   }
 }
